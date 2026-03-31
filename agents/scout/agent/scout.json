@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "description": "Agent non-fiable chargé de lire des sources externes",
+    "role": "untrusted",
+    "trustedBy": "main"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "deepseek": {
+        "baseUrl": "https://api.deepseek.com",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek Chat",
+            "api": "openai-completions",
+            "reasoning": false,
+            "input": ["text"],
+            "contextWindow": 131072,
+            "maxTokens": 8192,
+            "compat": {
+              "supportsUsageInStreaming": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "deepseek/deepseek-chat"
+      },
+      "workspace": "/home/claw/.openclaw/agents/scout/workspace"
+    }
+  },
+  "tools": {
+    "exec": {
+      "host": "none"
+    },
+    "fs": {
+      "workspaceOnly": true
+    },
+    "sandbox": {
+      "tools": {
+        "allow": [
+          "read",
+          "mcp-adapter"
+        ],
+        "deny": [
+          "write",
+          "edit",
+          "apply_patch",
+          "browser",
+          "canvas",
+          "nodes",
+          "cron",
+          "discord",
+          "gateway",
+          "sessions_spawn",
+          "sessions_send"
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": false
+    }
+  },
+  "gateway": {
+    "port": 18790,
+    "mode": "local",
+    "bind": "loopback"
+  }
+}

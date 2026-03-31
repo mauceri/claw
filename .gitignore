@@ -1,5 +1,5 @@
-# Workspace (dépôt git séparé)
-workspace/
+# Workspace principal (dépôt git séparé)
+/workspace/
 
 # Secrets et authentification
 agents/main/agent/auth-profiles.json

@@ -46,10 +46,9 @@
       "tools": {
         "allow": [
           "read",
-          "mcp-adapter"
+          "write"
         ],
         "deny": [
-          "write",
           "edit",
           "apply_patch",
           "browser",

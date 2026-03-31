@@ -1,0 +1,33 @@
+# Workspace (dépôt git séparé)
+workspace/
+
+# Secrets et authentification
+agents/main/agent/auth-profiles.json
+credentials/
+identity/
+openclaw.json
+
+# Données runtime
+logs/
+sessions/
+subagents/
+telegram/
+update-check.json
+devices/
+exec-approvals.json
+
+# Backups et base de données
+*.bak
+*.bak.*
+memory/
+
+# Fichiers temporaires
+*.tmp
+*.log
+workspace/.openclaw/workspace-state.json
+workspace/HEARTBEAT.md
+
+# Node
+node_modules/
+extensions/*/node_modules/
+extensions/*/.dist/

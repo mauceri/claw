@@ -6,9 +6,54 @@
       "models": []
     },
     "ollama": {
-      "baseUrl": "http://127.0.0.1:11434",
-      "api": "ollama",
-      "models": [],
+      "baseUrl": "http://sanroque:11434/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "gemma4:latest",
+          "name": "Gemma 4 8B (local)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 8192,
+          "maxTokens": 2048
+        },
+        {
+          "id": "glm4:latest",
+          "name": "GLM 4 9B (local)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 8192,
+          "maxTokens": 2048
+        },
+        {
+          "id": "granite4:3b",
+          "name": "Granite 4 3B (local)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 8192,
+          "maxTokens": 2048
+        },
+        {
+          "id": "granite4:3b-131k",
+          "name": "Granite 4 3B 131k (local)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 8192,
+          "maxTokens": 2048
+        }
+      ],
       "apiKey": "ollama-local"
     },
     "deepseek": {
@@ -114,6 +159,42 @@
         }
       ],
       "apiKey": "OPENROUTER_API_KEY"
+    },
+    "ollm": {
+      "baseUrl": "https://api.ollm.com/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "near/DeepSeek-V3.1",
+          "name": "DeepSeek V3.1 (OLLM)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 8192
+        }
+      ],
+      "apiKey": "OLLM_API_KEY"
+    },
+    "llamacpp": {
+      "baseUrl": "http://sanroque:8989/v1",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "/home/mauceric/lora_local/test_wikipedia_gguf/model-Q6_K.gguf",
+          "name": "LoRA Wikipedia Q6_K (local)",
+          "api": "openai-completions",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "contextWindow": 20480,
+          "maxTokens": 4096
+        }
+      ],
+      "apiKey": "llamacpp-local"
     }
   }
 }
